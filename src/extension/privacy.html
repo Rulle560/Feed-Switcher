@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feed Switcher · 隐私与数据</title>
+  <link rel="stylesheet" href="privacy.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div>
+        <span class="eyebrow">FS-006 · Privacy & Compliance</span>
+        <h1>隐私与数据中心</h1>
+        <p>Feed Switcher 采用最小数据原则。Level A 不读取或上传你的 YouTube 观看历史、搜索历史、浏览器历史、Cookie、邮箱或密码。</p>
+      </div>
+      <div class="policy">政策版本 <strong data-policy-version>—</strong></div>
+    </header>
+
+    <section class="grid two">
+      <article class="card">
+        <h2>本机保存</h2>
+        <p>频道发现设置、收藏、最近使用、本机启用状态、云同步连接信息和远程 Gate 缓存保存在 <code>chrome.storage.local</code>。</p>
+        <pre data-local-summary>读取中…</pre>
+      </article>
+      <article class="card">
+        <h2>云同步保存</h2>
+        <p>只有在你主动同意并启用同步后，单独运行的服务器才接收发现配置、收藏和最近使用。账号不要求邮箱或密码。本版本提供可选本机同步和需另行部署验证的自托管适配器，不提供托管同步服务。</p>
+        <pre data-cloud-summary>读取中…</pre>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>明确不收集</h2>
+      <div class="chips">
+        <span>YouTube 观看历史</span><span>YouTube 搜索历史</span><span>浏览器历史</span><span>Cookie</span><span>邮箱</span><span>密码</span><span>支付信息</span><span>通讯录</span>
+      </div>
+      <p class="note">当前 Level A 仅在 YouTube 页面注入 Feed Switcher UI，并构造用户主动选择的 YouTube 搜索。页面中的视频内容不会被上传到 Backend Lite。</p>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <h2>保留期限</h2>
+        <ul>
+          <li>本机数据：保留到你清除扩展数据或卸载扩展。</li>
+          <li>当前同步快照：保留到你删除同步账号。自托管服务如有运营备份，其保留与清理需要部署者另行说明和验证。</li>
+          <li>运维事件日志：仅记录事件类型、哈希账号标识、状态、客户端版本和时间，目标保留 30 天。正常运行时每小时清理，物理删除可能增加最多一小时的调度延迟；本机服务关闭期间无法清理，下次启动先执行清理。云服务须启用对应定时任务，本版本不提供公共同步服务。</li>
+          <li>同步密钥：原始 secret 仅保存在用户设备；服务器只保存 SHA-256 哈希。</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>传输与访问</h2>
+        <ul>
+          <li>当前本机 Backend Lite 仅用于开发验收；正式生产后端必须使用 HTTPS。</li>
+          <li>不出售用户数据，不用于个性化/重定向广告。</li>
+          <li>除用户明确请求的支持、安全调查、法律要求等有限情形外，不允许人工读取用户同步数据。</li>
+          <li>服务器 Feature Flag 只能关闭高级能力，不能绕过本地 Gate 开启未获批准功能。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>你的控制权</h2>
+      <div class="actions">
+        <button type="button" data-export-local>导出本机数据摘要</button>
+        <button type="button" data-disconnect-device>断开本设备</button>
+        <button type="button" class="danger" data-delete-cloud>删除云端账号</button>
+        <button type="button" class="danger ghost" data-clear-local>清除本机 Feed Switcher 数据</button>
+      </div>
+      <p class="status" data-privacy-status data-kind="info">“断开本设备”只移除本机保存的同步密钥，不删除本地收藏或同步账号；“删除云端账号”会删除同步账号及其当前同步快照，不清除本地收藏，也不承诺删除自托管服务的所有运营备份。</p>
+    </section>
+
+    <section class="card">
+      <h2>云同步同意状态</h2>
+      <pre data-consent-summary>读取中…</pre>
+      <p class="note">你可以随时在 Popup 撤回云同步数据同意。撤回后，新建/连接账号及上传/下载会暂停，但你仍可断开设备或删除云端账号。</p>
+    </section>
+
+    <section class="card">
+      <h2>Chrome Web Store Limited Use</h2>
+      <p>Feed Switcher 对从 Chrome 扩展权限与用户交互中获得的数据，仅用于提供或改进本产品明确的单一用途。用户数据不会出售，也不会用于个性化、重定向或基于兴趣的广告。人工访问仅限于用户明确请求的特定支持、安全/滥用调查、法律要求，或经聚合匿名化后的内部运营。</p>
+    </section>
+
+    <section class="card legal">
+      <h2>平台条款与未来 API 功能</h2>
+      <p>当前 FS-006 Level A 不使用 YouTube Data API。未来 Gate 2/3 功能启用 YouTube API Services 前，会按适用要求更新隐私政策、数据保留规则、用户同意和 YouTube 条款披露。</p>
+      <div class="links">
+        <a href="terms.html">Feed Switcher 使用条款</a>
+        <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">YouTube Terms of Service</a>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>
+      </div>
+    </section>
+  </main>
+  <script src="core.js"></script>
+  <script src="privacy.js"></script>
+</body>
+</html>

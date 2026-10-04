@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feed Switcher</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="card">
+    <header>
+      <div>
+        <h1>Feed Switcher</h1>
+        <p>FS-004 · Local Profiles</p>
+      </div>
+      <span class="gate" data-gate>LEVEL_A</span>
+    </header>
+
+    <section class="row">
+      <div>
+        <strong>在 YouTube 启用</strong>
+        <small>只控制 Feed Switcher，不影响 YouTube 本身。</small>
+      </div>
+      <label class="switch">
+        <input type="checkbox" data-enabled />
+        <span></span>
+      </label>
+    </section>
+
+    <section class="channel-box">
+      <span>当前频道</span>
+      <strong data-channel>普通 YouTube 模式</strong>
+    </section>
+
+    <section class="profile-stats">
+      <div><span>收藏</span><strong data-favorites-count>0</strong></div>
+      <div><span>最近</span><strong data-recents-count>0</strong></div>
+    </section>
+
+    <p class="sync" data-sync-status>在 YouTube 页面点击右下角 FS 设置频道。</p>
+
+    <details>
+      <summary>开发 Gate 状态</summary>
+      <pre data-flags></pre>
+    </details>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

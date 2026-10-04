@@ -1,0 +1,12 @@
+{
+  "gateCeiling": "LEVEL_A",
+  "flags": {
+    "API_ENHANCED_SEARCH": false,
+    "DERIVED_METRICS": false,
+    "AI_TOPIC_TAGGING": false,
+    "HISTORICAL_TRACKING": false,
+    "CREATOR_RANKINGS": false,
+    "ALERTS": false
+  },
+  "message": "FS-006 local backend"
+}

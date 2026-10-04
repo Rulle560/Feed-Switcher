@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "None",
+    "lib": ["ES2022", "DOM"],
+    "strict": true,
+    "noImplicitAny": true,
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "files": [
+    "src/shared/core.ts",
+    "src/content/index.ts",
+    "src/background/index.ts",
+    "src/popup/index.ts"
+  ]
+}

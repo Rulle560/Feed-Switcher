@@ -1,0 +1,21 @@
+name = "feed-switcher-api"
+main = "cloudflare/worker.mjs"
+compatibility_date = "2026-09-01"
+
+[triggers]
+crons = ["0 * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "feed-switcher"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+[vars]
+FS_GATE_CEILING = "LEVEL_A"
+FS_API_ENHANCED_SEARCH = "false"
+FS_DERIVED_METRICS = "false"
+FS_AI_TOPIC_TAGGING = "false"
+FS_HISTORICAL_TRACKING = "false"
+FS_CREATOR_RANKINGS = "false"
+FS_ALERTS = "false"
+FS_CONFIG_MESSAGE = ""

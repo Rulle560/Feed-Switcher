@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feed Switcher</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="card">
+    <header>
+      <div>
+        <h1>Feed Switcher</h1>
+        <p>FS-006 · Privacy & Compliance</p>
+      </div>
+      <span class="gate" data-gate>LEVEL_A</span>
+    </header>
+
+    <section class="row">
+      <div>
+        <strong>在 YouTube 启用</strong>
+        <small>只控制 Feed Switcher，不影响 YouTube 本身。</small>
+      </div>
+      <label class="switch">
+        <input type="checkbox" data-enabled />
+        <span></span>
+      </label>
+    </section>
+
+    <section class="channel-box">
+      <span>当前频道</span>
+      <strong data-channel>普通 YouTube 模式</strong>
+    </section>
+
+    <section class="profile-stats">
+      <div><span>收藏</span><strong data-favorites-count>0</strong></div>
+      <div><span>最近</span><strong data-recents-count>0</strong></div>
+    </section>
+
+    <p class="sync" data-sync-status>在 YouTube 页面点击右下角 FS 设置频道。</p>
+
+    <section class="cloud-card">
+      <div class="cloud-head">
+        <div>
+          <strong>云同步 · Backend Lite</strong>
+          <small>匿名同步账号，不收集邮箱。</small>
+        </div>
+        <div class="cloud-state-actions">
+          <span class="cloud-badge" data-cloud-state>未连接</span>
+          <button type="button" class="disconnect-chip" data-cloud-disconnect-short hidden>断开</button>
+        </div>
+      </div>
+
+      <div class="cloud-meta" data-cloud-meta>本地模式 · 云同步未启用</div>
+
+      <section class="privacy-consent">
+        <label>
+          <input type="checkbox" data-privacy-consent />
+          <span>我已阅读并同意云同步数据说明。同步只上传频道配置、收藏和最近使用，不上传 YouTube 观看/搜索历史。</span>
+        </label>
+        <div class="privacy-links">
+          <a href="privacy.html" target="_blank" rel="noopener">隐私与数据</a>
+          <a href="terms.html" target="_blank" rel="noopener">使用条款</a>
+        </div>
+      </section>
+
+      <div class="cloud-create" data-cloud-create>
+        <button type="button" class="button primary" data-cloud-create-account>创建同步账号</button>
+        <div class="key-row">
+          <input type="text" data-cloud-key-input placeholder="已有同步密钥 fs1...." autocomplete="off" spellcheck="false" />
+          <button type="button" class="button" data-cloud-connect>连接</button>
+        </div>
+      </div>
+
+      <div class="cloud-connected" data-cloud-connected hidden>
+        <div class="button-grid">
+          <button type="button" class="button primary" data-cloud-push>上传本机</button>
+          <button type="button" class="button" data-cloud-pull>下载云端</button>
+          <button type="button" class="button" data-cloud-copy>复制同步密钥</button>
+          <button type="button" class="button" data-cloud-refresh>刷新 Gate</button>
+          <button type="button" class="button disconnect-button" data-cloud-disconnect>断开本设备</button>
+        </div>
+        <div class="danger-row">
+          <button type="button" class="link-button danger" data-cloud-delete>删除云端账号</button>
+        </div>
+      </div>
+
+      <p class="cloud-status" data-cloud-status>FS-006 验收环境继续使用本机 Backend Lite；正式生产必须使用 HTTPS。</p>
+      <div class="remote-config" data-remote-config></div>
+    </section>
+
+    <nav class="compliance-nav" aria-label="合规与数据">
+      <a href="privacy.html" target="_blank" rel="noopener">隐私中心</a>
+      <a href="terms.html" target="_blank" rel="noopener">使用条款</a>
+    </nav>
+
+    <details>
+      <summary>开发 Gate 状态</summary>
+      <pre data-flags></pre>
+    </details>
+  </main>
+  <script src="core.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
