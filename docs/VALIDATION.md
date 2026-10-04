@@ -8,7 +8,7 @@ Prepared and locally validated on 2026-10-04. These results describe the clean p
 - Tests cover current frontend settings/search/profiles, enable/disable, consent boundaries, privacy export, build repeatability and optional backend validation, atomic revision conflicts, account deletion and retention.
 - D1 SQL checks execute the actual repository statements against in-memory Node SQLite through a D1-shaped adapter. They cover concurrent revision writers, cascading deletion, delayed writers and scheduled cleanup. This is not a deployed Cloudflare integration test. Node prints an experimental SQLite warning; tests still pass.
 - Local transport checks use a disposable loopback server and verify empty 204 preflight, streamed request size enforcement and independent retention scheduling.
-- Remote GitHub CI: not run; repository/release pending.
+- Remote GitHub CI passed on 2026-10-04 for source commit `dbfc1be59f6697f97bf13f1ddcba0bf1dc1de7cc`: the Node 24 `npm run check` jobs completed successfully on both `windows-latest` and `ubuntu-latest`. [Recorded run](https://github.com/Rulle560/Feed-Switcher/actions/runs/37197476322). This evidence is tied to that commit; consult Actions for newer commits.
 
 ## Browser
 
@@ -17,4 +17,4 @@ Prepared and locally validated on 2026-10-04. These results describe the clean p
 - **4 optional-sync flows passed** against a real loopback HTTP backend with a disposable repository: account creation; favorite upload/download with revision; privacy export excluding the generated test key; deletion after consent withdrawal while retaining local favorites. No observed page errors.
 - The positive sync fixture pregrants the localhost host permission in a **test-only manifest copy**. The shipping manifest is unchanged. The real optional-host-permission approval dialog is **not verified** by this fixture.
 
-Synthetic tests are not evidence of external adoption. Minimum Chrome 120, live YouTube layouts, a user's actual upgrade path, native optional-permission approval and deployed Workers/D1 remain unverified environments. Remote GitHub CI has not run. See ACCEPTANCE.md for manual checks before claiming those environments work.
+Synthetic tests are not evidence of external adoption. Minimum Chrome 120, live YouTube layouts, a user's actual upgrade path, native optional-permission approval and deployed Workers/D1 remain unverified environments. Remote CI success does not verify those browser or production environments. See ACCEPTANCE.md for manual checks before claiming those environments work.
