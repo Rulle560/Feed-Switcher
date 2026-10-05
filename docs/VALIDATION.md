@@ -1,6 +1,6 @@
 # Validation record
 
-Prepared and locally validated on 2026-10-04. These results describe the clean preparation copy, not a public release or external adoption.
+Initial preparation was validated on 2026-10-04. The follow-up below was performed on 2026-10-05. These results describe specific test environments and are not external adoption evidence.
 
 ## Automated
 
@@ -17,4 +17,11 @@ Prepared and locally validated on 2026-10-04. These results describe the clean p
 - **4 optional-sync flows passed** against a real loopback HTTP backend with a disposable repository: account creation; favorite upload/download with revision; privacy export excluding the generated test key; deletion after consent withdrawal while retaining local favorites. No observed page errors.
 - The positive sync fixture pregrants the localhost host permission in a **test-only manifest copy**. The shipping manifest is unchanged. The real optional-host-permission approval dialog is **not verified** by this fixture.
 
-Synthetic tests are not evidence of external adoption. Minimum Chrome 120, live YouTube layouts, a user's actual upgrade path, native optional-permission approval and deployed Workers/D1 remain unverified environments. Remote CI success does not verify those browser or production environments. See ACCEPTANCE.md for manual checks before claiming those environments work.
+## Browser follow-up — 2026-10-05
+
+- Windows, Chrome for Testing **151.0.7922.34**, fresh disposable profiles. The current shipping 0.6.3 distribution was used without permission changes. No personal browser profile, history, credentials or user database was read.
+- **5 live YouTube checks passed** without request interception or a signed-in account: launcher on the public homepage (HTTP 200); custom topic and favorite; native search with the selected topic and recent configuration; disposable JSON export/import; popup enable/disable immediately updating the live page. No extension-attributed page error was observed. This covers the public layout served in that session, not every layout, locale, signed-in state or browser version.
+- **4 isolated upgrade checks passed** from the archived `legacy/fs006/Chrome_Loadable` manifest **0.6.0** to shipping **0.6.3**. The old UI created a favorite/recent configuration with non-default language, region, time range and sort, then disabled the extension. After replacing runtime files at the same temporary absolute path and restarting the same disposable profile, the extension identity stayed unchanged, both complete settings/profile objects were preserved, and old favorites/recent configurations remained usable with the expected search URL and no duplicate records.
+- The upgrade uses synthetic settings only. It does not verify the maintainer's actual FS-006 sub-version, a real user's data, a Chrome update-button interaction, a changed installation path, an uninstall/reinstall path, or sync-account/consent migration. An initial harness run used the incorrect field name `recents`; that harness assertion was corrected to the real `recent` schema before the passing run. No product change was required.
+
+Minimum Chrome 120, native optional-host-permission approval, actual-user upgrade and deployed Workers/D1 remain unverified environments. Remote CI success does not verify those browser or production environments. See ACCEPTANCE.md for remaining manual checks. Neither synthetic nor live acceptance tests count as independent users or adoption.
