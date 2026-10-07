@@ -172,7 +172,14 @@ async function runBackendAction(action, opts = {}) {
         }
     }
     if (opts.needsPermission !== false) {
-        const granted = await ensureBackendPermission();
+        let granted;
+        try {
+            granted = await ensureBackendPermission();
+        }
+        catch {
+            setCloudMessage('无法请求 Backend Lite 网络权限，操作未执行。请重新点击后重试。', 'error');
+            return null;
+        }
         if (!granted) {
             setCloudMessage('未授予 Backend Lite 网络权限，操作已取消。', 'error');
             return null;

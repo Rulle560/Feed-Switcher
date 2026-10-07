@@ -12,7 +12,7 @@ test('offline package is repeatable, source-identical and contains no legacy/pri
     p.buildExtension(directory); const first = hashes();
     p.buildExtension(directory);
     assert.deepEqual(hashes(), first);
-    assert.equal(p.validateExtension(directory, { compareSource: true }).version, '0.6.3');
+    assert.equal(p.validateExtension(directory, { compareSource: true }).version, '0.6.4');
     const current = readFileSync(join(directory, 'popup.js'), 'utf8');
     writeFileSync(join(directory, 'popup.js'), `${current}\n// unexpected hand edit\n`);
     assert.throws(() => p.validateExtension(directory, { compareSource: true }), /differs from source/);

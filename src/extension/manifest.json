@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Feed Switcher",
   "description": "Choose and switch the topics you want to discover on YouTube.",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "minimum_chrome_version": "120",
   "permissions": [
     "storage"

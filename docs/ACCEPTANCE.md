@@ -2,7 +2,7 @@
 
 Use a separate browser profile and disposable examples. Never publish a sync key, personal profile export, browsing data or a backend database in an issue. Automated evidence is recorded in VALIDATION.md; this checklist is not a claim that these steps have already passed.
 
-1. With Node 24+, run `npm run check`, then load the generated `dist` folder through Chrome's unpacked-extension control. Confirm version 0.6.3.
+1. With Node 24+, run `npm run check`, then load the generated `dist` folder through Chrome's unpacked-extension control. Confirm version 0.6.4.
 2. On a live YouTube page, verify the launcher, popup enable/disable, custom topic, saved/recent profiles and JSON import/export. Confirm the generated query matches the visible explanation. Language, region and time settings are approximate search hints.
 3. Check a normal profile upgraded from an earlier version without clearing existing data. Back up only your own settings locally before the test; never share the backup. Keep the loaded folder path and reload the existing extension entry when updating runtime files. The recorded isolated 0.6.0-to-0.6.3 same-directory test preserves synthetic settings; it does not replace actual-user migration checks or cover moving folders/uninstalling. Existing sync-account custody must be handled explicitly, not silently reset.
 4. For optional same-device sync, start Backend_Lite in a separate disposable copy. Consent must be unchecked by default. Approve the localhost host permission through Chrome's real permission prompt, then create a disposable account. Test upload/download and one stale-revision conflict.

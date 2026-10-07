@@ -124,7 +124,15 @@ async function deleteCloudAccount() {
     }
     if (!confirm('这会永久删除云端同步账号及云端频道备份，并移除本机保存的同步密钥。本地收藏与最近使用不会删除。确认继续？'))
         return;
-    if (!(await ensureBackendPermission())) {
+    let granted;
+    try {
+        granted = await ensureBackendPermission();
+    }
+    catch {
+        setStatus('无法请求 Backend Lite 网络权限，未提交云端删除请求。请重新点击后重试。', 'error');
+        return;
+    }
+    if (!granted) {
         setStatus('未授予 Backend Lite 网络权限，无法提交云端删除请求。', 'error');
         return;
     }

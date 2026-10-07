@@ -1,6 +1,6 @@
 {
   "name": "feed-switcher",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "private": true,
   "license": "MIT",
   "description": "Local-first YouTube topic discovery with portable interest profiles and optional local sync.",

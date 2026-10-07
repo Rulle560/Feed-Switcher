@@ -4,7 +4,7 @@
 
 Feed Switcher 是本地优先的 Chrome Manifest V3 扩展。主题词、语言、地区、时间窗和优先级会组成 YouTube 原生搜索 URL；它不保证搜索结果，也不会训练、替换或控制 YouTube 推荐算法。界面里的“频道”是保存的发现配置，不是 YouTube 发布者频道。
 
-当前整理版本：**0.6.3**。以现有 0.6.2 可加载版本为基础统一源码与构建；历史版本保留为参考，不代表当前功能验证结果。
+当前源码版本：**0.6.4**，修复可选同步权限接口报错时的界面处理；在0.6.3统一源码与构建的基础上维护。历史版本保留为参考，不代表当前版本已重新验证所有环境。
 
 [项目仓库](https://github.com/Rulle560/Feed-Switcher) · [版本下载](https://github.com/Rulle560/Feed-Switcher/releases) · [问题反馈](https://github.com/Rulle560/Feed-Switcher/issues)
 

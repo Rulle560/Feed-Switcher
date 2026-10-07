@@ -17,7 +17,7 @@ var FSCore;
     FSCore.BACKEND_ORIGIN_PATTERN = `${FSCore.BACKEND_ORIGIN}/*`;
     FSCore.PRIVACY_CONSENT_KEY = 'fs.privacy-consent.v1';
     FSCore.PRIVACY_POLICY_VERSION = '2026-09-21';
-    FSCore.CLIENT_VERSION = '0.6.3';
+    FSCore.CLIENT_VERSION = '0.6.4';
     FSCore.TOPICS = Object.freeze([
         { id: 'history', label: '历史', icon: '◷' },
         { id: 'technology', label: '科技', icon: '⌘' },
